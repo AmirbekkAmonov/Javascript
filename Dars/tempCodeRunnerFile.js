@@ -1,13 +1,11 @@
 
-function salomat(str) {
-    let str1 = '';
-    let num = 0;
-    for (let i = 0; i < str.length / 2; i++) {
-        str1 += str[i];
-        str1 += str1[str1 - 1 - num];
-        num++;
+function Indeks(str) {
+    if (str.length > 3) {
+        const [,,,a] = str
+        return a
+    } else {
+        return "Null"
     }
-    return str1;
 }
-let str = 'salomat';
-console.log(salomat(str));
+let str = "salom";
+console.log(Indeks(str));
