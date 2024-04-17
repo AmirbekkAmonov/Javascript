@@ -1,14 +1,16 @@
 
-class Employee {
-    constructor(ism,familya,yosh,email){
-    this.ism = ism
-    this.familya = familya
-    this.yosh = yosh
-    this.email = email
-    }
-    tostring(){
-        return `${this.familya} ${this.ism} ${this.yosh} \nEmail:${this.email}`
+class Paskal {
+    static a(n) {
+        let array = [1];
+        for (let i = 0; i < n; i++) {
+            const b = []
+            b.push(1);
+            for (let j = 0; j < i; j++) {
+                b.push(array[j - 1] + array[i])
+                
+            }
+            console.log(b);
+        }
     }
 }
-const employee = new Employee("Amirbek","Amonov",19,"amirbek@gamil.com")
-console.log(employee.tostring());
+console.log(Paskal.a(5));
