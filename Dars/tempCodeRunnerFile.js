@@ -1,16 +1,20 @@
 
-class Paskal {
-    static a(n) {
-        let array = [1];
-        for (let i = 0; i < n; i++) {
-            const b = []
-            b.push(1);
-            for (let j = 0; j < i; j++) {
-                b.push(array[j - 1] + array[i])
-                
-            }
-            console.log(b);
-        }
+
+const url1 = "https://jsonplaceholder.typicode.com/users"
+
+const Email = async(url1) =>{
+    const nameList = []
+    const res = await fetch(url1)
+    if (res.ok) {
+        const json = await res.json()
+        json.forEach(element => {
+            nameList.push(element.email)
+        })
+
     }
-}
-console.log(Paskal.a(5));
+    return nameList
+};
+
+Email(url1).then(data =>{
+    console.log(data);
+})

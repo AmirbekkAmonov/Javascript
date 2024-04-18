@@ -76,8 +76,6 @@ console.log(lastday(2014, 0));
 //      5-masala...
 
 
-
-
 class WordCounter {
     constructor() {
         this.wordCount = new Map();
