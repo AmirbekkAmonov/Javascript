@@ -1,54 +1,24 @@
 
-
-
-class Product {
-    constructor(nomi, miqdori, narxi) {
-        this.nomi = nomi;
-        this.miqdori = miqdori;
-        this.narxi = narxi;
+function findExponent(n2) {
+    let exponent = 0;
+    
+    while (n2 % 2 === 0) {
+        n2 = n2 / 2;
+      exponent++;
     }
-    get productInfo() {
-        return `Product nomi: ${this.nomi}, miqdori: ${this.miqdori}, narxi: ${this.narxi}`;
+    
+    if (n2 !== 1) {
+      return "Son 2 ning darajasi emas";
+    } else {
+      return exponent;
     }
-    set setPrice(narx) {
-        this.narxi = narx;
-    }
-}
-
-
-function FindAllMethods(obj) {
-    const methods = [];
-    for (let key in obj) {
-        if (typeof obj[key] === "function") {
-            methods.push(key);
-        }
-    }
-    return methods;
-}
-
-
-
-
-function InvertKeyValue(obj) {
-    const invertedObj = {};
-    for (let key in obj) {
-      invertedObj[obj[key]] = key;
-    }
-    return invertedObj;
   }
   
+  let n2 = 10;
+  let exponent = findExponent(n2);
+  if (typeof exponent === "number") {
+    console.log("k =", exponent); 
+  } else {
+    console.log(exponent);
+  }
 
-
-const product = new Product("Telefon", 1, 1000);
-
-console.log(product.productInfo);
-
-product.setPrice = 1500;
-
-console.log(product.productInfo);
-
-console.log(FindAllMethods(product));
-
-
-  // Key va value larni almashtiruvchi funksiya
-  console.log(InvertKeyValue({ red: "qizil", green: "yashil" }));

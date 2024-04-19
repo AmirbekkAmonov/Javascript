@@ -1,20 +1,14 @@
 
 
-const url1 = "https://jsonplaceholder.typicode.com/users"
 
-const Email = async(url1) =>{
-    const nameList = []
-    const res = await fetch(url1)
-    if (res.ok) {
-        const json = await res.json()
-        json.forEach(element => {
-            nameList.push(element.email)
-        })
+let Person = {
+    name: "Ali",
+    age: 19,
+    lastName:"Aliyev",
 
+    fullName(gender){
+        console.log(`${this.name} ${this.lastName} ${this.age} ${gender}` );
     }
-    return nameList
-};
+}
+Person.fullName.call(Person, 12 )
 
-Email(url1).then(data =>{
-    console.log(data);
-})
